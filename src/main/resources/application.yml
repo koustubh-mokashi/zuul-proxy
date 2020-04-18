@@ -1,0 +1,22 @@
+server:
+   port: 8111
+
+spring:
+   application:  
+      name: zuulserver
+
+ribbion:
+  eureka:
+    enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+      fetchRegistry: true
+
+zuul:
+   routes:
+      hello_service:
+         path: /hello-service/**
+         serviceId: hello_service
